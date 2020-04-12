@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodosComponent } from './todos/todos.component';
+import { TodosModule } from './todos/todos.module';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent,
     HeaderComponent,
     AboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TodosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
