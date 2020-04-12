@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TodosModule } from './todos/todos.module';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutComponent } from './about/about.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TodosModule
+    TodosModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

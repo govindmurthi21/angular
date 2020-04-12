@@ -1,0 +1,15 @@
+.todos-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.todo {
+    text-align: center;
+    background: #f2f2f2;
+    cursor: pointer;
+    padding: 20px;
+}
+.todo.completed {
+    background: #4b4b4b;
+    color: #fff;
+}
