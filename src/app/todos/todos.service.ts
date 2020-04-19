@@ -8,11 +8,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class TodosService {
 
+  private todos:Observable<Todo[]> = null; 
+
   constructor(
     private http: HttpClient
   ) { }
 
   getTodos(): Observable<Todo[]> {
-   return  this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=5');
+   this.todos = this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=5');
+
+   return this.todos;
   }
 }

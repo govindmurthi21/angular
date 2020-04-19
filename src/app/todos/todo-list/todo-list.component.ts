@@ -18,4 +18,8 @@ export class TodoListComponent implements OnInit {
     this.todos$ = this.service.getTodos();
   }
 
+  toggleTodoCompleted(todo: Todo): void {
+    todo.completed = !todo.completed
+  }
+
 }

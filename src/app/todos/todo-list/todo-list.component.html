@@ -4,6 +4,7 @@
     *ngFor="let todo of todos$ | async" class="todo"
     [class.completed]="todo.completed"
     id="todo.id"
+    (click)="toggleTodoCompleted(todo)"
   >
     <span>{{ todo.title }}</span>
   </div>
