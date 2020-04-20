@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {TodosService} from '../todos.service';
 import {Todo} from '../todo';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,6 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class TodoListComponent implements OnInit {
   todos$: Observable<Todo[]>;
+  todoTitle: string;
 
   constructor(private service: TodosService) { }
 
@@ -20,6 +22,14 @@ export class TodoListComponent implements OnInit {
 
   toggleTodoCompleted(todo: Todo): void {
     todo.completed = !todo.completed
+  }
+
+  addTodo(e): void {
+    e.preventDefault();
+    this.service.addTodo(this.todoTitle).subscribe(newTodo => {
+      this.todos$ = this.todos$.pipe(map(todos => {todos.push(newTodo); return todos;}));
+      e.preventDefault();
+    });
   }
 
 }

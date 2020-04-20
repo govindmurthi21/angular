@@ -13,3 +13,20 @@
     background: #4b4b4b;
     color: #fff;
 }
+
+.todos-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 20px
+}
+
+.add-todo {
+    width: 100%;
+}
+
+.add-todo-btn {
+    width: 200px;
+    padding: 20px;
+    color: #fff;
+    background-color:#3cbd00  ;
+} 
